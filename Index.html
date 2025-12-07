@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Mary ❤️🔥</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Trebuchet MS', sans-serif;
+            background: url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* TELA DE ENTRADA */
+        #telaEntrada {
+            position: fixed;
+            top:0; left:0;
+            width: 100%; height:100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            z-index: 10000;
+        }
+
+        #telaEntrada h1 {
+            font-size: 2.6em;
+            text-shadow: 0 0 20px #ff66c4;
+        }
+
+        #telaEntrada button {
+            background: linear-gradient(45deg,#ff66c4,#ffccf2);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff66c4;
+            margin-top: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 0 0 20px #ff99e6;
+        }
+
+        .subtext {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 0 0 10px #ffb3ff;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #ff99d9;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #ff66c470;
+            backdrop-filter: blur(5px);
+            font-size: 1.3em;
+        }
+
+        .fofo {
+            color: #ffccf2;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff66c4;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff66c4, #ffccf2);
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffccf2;
+        }
+
+        .sparkles {
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- TELA DE ENTRADA -->
+<div id="telaEntrada">
+    <h1>Bem-vinda, Mary ❤️✨</h1>
+    <p style="font-size:1.3em;">Clique no botão para entrar no site</p>
+    <button onclick="entrar()">Entrar 💗</button>
+</div>
+
+<!-- MÚSICA EM SEGUNDO PLANO -->
+<audio id="musica" loop>
+    <source src="https://github.com/Black4445e/free-api-like-freefire/raw/main/John%20Legend%20-%20All%20of%20Me%20(Tradu%C3%A7%C3%A3o)%20%5BZWZGDpU-rwE%5D.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <h1>Mary ❤️ Minha Princesa Gamer 🔥</h1>
+    <div class="subtext">Uma declaração feita com carinho… e com você no coração ✨</div>
+</header>
+
+<div class="container">
+
+    <div class="sparkles">✨💖🌸💖✨</div>
+
+    <!-- PARTE 1 -->
+    <div class="card" id="parte1">
+        <p>Mary… você é tipo um <span class="fofo">drop lendário</span> que aparece só uma vez na vida.</p>
+
+        <p>Brilha, encanta e deixa tudo mais bonito ao redor.</p>
+
+        <p>E sim, eu fiz tudo isso só pra você,  
+        misturando Free Fire com fofura… <span class="fofo">igual você. ❤️</span></p>
+
+        <div class="btn" onclick="mostrarMais()">Ler mais 💗</div>
+    </div>
+
+    <!-- PARTE 2 -->
+    <div class="card hidden" id="parte2">
+        <p>Se eu tivesse que escolher um duo pra sempre…  
+        escolheria você sem pensar duas vezes.</p>
+
+        <p class="fofo" style="font-size:1.5em;">Você é meu loot perfeito. 💕🔥</p>
+
+        <p>Forte, doce, especial, brilhante, única…  
+        e dona de um lugar enorme aqui dentro.</p>
+
+        <div class="btn" onclick="voltar()">Voltar 🌸</div>
+    </div>
+
+</div>
+
+<div class="footer">
+    Feito com muito carinho para você, Mary 💗✨
+</div>
+
+<script>
+function entrar() {
+    document.getElementById("telaEntrada").style.display = "none";
+    const musica = document.getElementById("musica");
+    musica.play(); // inicia a música quando entra no site
+}
+
+function mostrarMais() {
+    document.getElementById("parte1").classList.add("hidden");
+    document.getElementById("parte2").classList.remove("hidden");
+}
+
+function voltar() {
+    document.getElementById("parte2").classList.add("hidden");
+    document.getElementById("parte1").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
