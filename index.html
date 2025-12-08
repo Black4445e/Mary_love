@@ -1,197 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Para Mary ❤️🔥</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Trebuchet MS', sans-serif;
-            background: url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* TELA DE ENTRADA */
-        #telaEntrada {
-            position: fixed;
-            top:0; left:0;
-            width: 100%; height:100%;
-            background: rgba(0,0,0,0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            z-index: 10000;
-        }
-
-        #telaEntrada h1 {
-            font-size: 2.6em;
-            text-shadow: 0 0 20px #ff66c4;
-        }
-
-        #telaEntrada button {
-            background: linear-gradient(45deg,#ff66c4,#ffccf2);
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.3em;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 20px #ff66c4;
-            margin-top: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(3px);
-        }
-
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            font-weight: bold;
-            text-shadow: 0 0 20px #ff99e6;
-        }
-
-        .subtext {
-            font-size: 1.2em;
-            margin-top: 10px;
-            text-shadow: 0 0 10px #ffb3ff;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid #ff99d9;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px #ff66c470;
-            backdrop-filter: blur(5px);
-            font-size: 1.3em;
-        }
-
-        .fofo {
-            color: #ffccf2;
-            font-weight: bold;
-            text-shadow: 0 0 10px #ff66c4;
-        }
-
-        .btn {
-            background: linear-gradient(45deg, #ff66c4, #ffccf2);
-            color: #000;
-            padding: 12px 25px;
-            border-radius: 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #ffccf2;
-        }
-
-        .sparkles {
-            font-size: 35px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Para Mary ❤️🔥</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    background: url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
+    color: white;
+    overflow-x: hidden;
+}
+#telaEntrada {
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.85);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    z-index:1000;
+}
+#telaEntrada h1 { font-size:2.8em; text-shadow:0 0 20px #ff66c4; }
+#telaEntrada button {
+    margin-top:25px;
+    padding:15px 40px;
+    font-size:1.5em;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff66c4,#ffd6f7);
+    box-shadow:0 0 20px #ff66c4;
+    font-weight:bold;
+}
+header { padding:80px 20px; text-align:center; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px); }
+h1#titulo { font-size:3em; margin:0; text-shadow:0 0 25px #ff99f7; min-height:60px; }
+.subtext { font-size:1.3em; margin-top:10px; text-shadow:0 0 10px #ffc8ff; }
+.container { max-width:900px; margin:40px auto; padding:20px; }
+.card {
+    background: rgba(0,0,0,0.6);
+    border:2px solid #ff99d9;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 15px #ff66c480;
+    backdrop-filter: blur(6px);
+    font-size:1.3em;
+    margin:10px 0;
+    cursor:pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform:translateY(-5px); box-shadow:0 0 25px #ff66c4; }
+.card.hidden { display:none; }
+.btn {
+    padding:10px 25px;
+    font-size:1.2em;
+    border-radius:25px;
+    cursor:pointer;
+    background: linear-gradient(45deg,#ff66c4,#ffd6f7);
+    font-weight:bold;
+    display:inline-block;
+    margin:5px;
+    border:none;
+}
+.footer { text-align:center; padding:25px; margin-top:40px; background: rgba(0,0,0,0.7); color:#ffccf2; }
+</style>
 </head>
 <body>
 
-<!-- TELA DE ENTRADA -->
 <div id="telaEntrada">
-    <h1>Bem-vinda, Mary ❤️✨</h1>
-    <p style="font-size:1.3em;">Clique no botão para entrar no site</p>
+    <h1>Bem-vinda Mary ❤️✨</h1>
+    <p>Clique no botão para entrar no site</p>
     <button onclick="entrar()">Entrar 💗</button>
 </div>
 
-<!-- MÚSICA EM SEGUNDO PLANO -->
 <audio id="musica" loop>
     <source src="https://github.com/Black4445e/free-api-like-freefire/raw/main/John%20Legend%20-%20All%20of%20Me%20(Tradu%C3%A7%C3%A3o)%20%5BZWZGDpU-rwE%5D.mp3" type="audio/mpeg">
 </audio>
 
 <header>
-    <h1>Mary ❤️ Minha Princesa Gamer 🔥</h1>
-    <div class="subtext">Uma declaração feita com carinho… e com você no coração ✨</div>
+    <h1 id="titulo"></h1>
+    <div class="subtext">Declaração feita com carinho… 💖🔥</div>
 </header>
 
-<div class="container">
+<div class="container" id="cartasContainer"></div>
 
-    <div class="sparkles">✨💖🌸💖✨</div>
-
-    <!-- PARTE 1 -->
-    <div class="card" id="parte1">
-        <p>Mary… você é tipo um <span class="fofo">drop lendário</span> que aparece só uma vez na vida.</p>
-
-        <p>Brilha, encanta e deixa tudo mais bonito ao redor.</p>
-
-        <p>E sim, eu fiz tudo isso só pra você,  
-        misturando Free Fire com fofura… <span class="fofo">igual você. ❤️</span></p>
-
-        <div class="btn" onclick="mostrarMais()">Ler mais 💗</div>
-    </div>
-
-    <!-- PARTE 2 -->
-    <div class="card hidden" id="parte2">
-        <p>Se eu tivesse que escolher um duo pra sempre…  
-        escolheria você sem pensar duas vezes.</p>
-
-        <p class="fofo" style="font-size:1.5em;">Você é meu loot perfeito. 💕🔥</p>
-
-        <p>Forte, doce, especial, brilhante, única…  
-        e dona de um lugar enorme aqui dentro.</p>
-
-        <div class="btn" onclick="voltar()">Voltar 🌸</div>
-    </div>
-
+<div style="position:fixed; bottom:20px; right:20px; z-index:1000;">
+    <button class="btn" id="btnMusica" onclick="toggleSom()">🔊</button>
 </div>
 
-<div class="footer">
-    Feito com muito carinho para você, Mary 💗✨
-</div>
+<div class="footer">Feito com muito carinho para você, Mary 💗✨</div>
 
 <script>
-function entrar() {
-    document.getElementById("telaEntrada").style.display = "none";
-    const musica = document.getElementById("musica");
-    musica.play(); // inicia a música quando entra no site
+const musica = document.getElementById('musica');
+const btnMusica = document.getElementById('btnMusica');
+const cartasContainer = document.getElementById('cartasContainer');
+let tituloTexto = "Mary ❤️ Minha Princesa Gamer 🔥";
+let i = 0;
+
+// 100 frases totalmente únicas
+const frases = [
+"Mary, seu sorriso ilumina mais que qualquer sol.",
+"Você transforma dias comuns em aventuras mágicas.",
+"Seu olhar tem o poder de acalmar minha alma.",
+"Cada gesto seu é poesia pura.",
+"Você é minha melodia favorita em todos os momentos.",
+"Seu abraço é meu lugar seguro.",
+"Seus olhos carregam o brilho das estrelas.",
+"Mary, você é minha inspiração diária.",
+"Com você, até o silêncio é confortável.",
+"Você faz meu coração dançar de felicidade.",
+"Cada palavra sua é como música para meus ouvidos.",
+"Mary, você é minha flor mais rara no jardim da vida.",
+"Seu carinho aquece meu coração.",
+"Você é a luz que ilumina minhas noites.",
+"Cada instante contigo é inesquecível.",
+"Você é meu ponto de paz em meio ao caos.",
+"Mary, sua risada é meu som favorito.",
+"Você transforma cada momento em algo especial.",
+"Seu abraço cura qualquer tristeza.",
+"Você é minha estrela-guia no céu da vida.",
+"Mary, seu sorriso é meu raio de sol.",
+"Cada mensagem sua é um presente para minha alma.",
+"Você faz meu mundo brilhar com cores únicas.",
+"Mary, cada olhar seu é um universo a explorar.",
+"Você é meu porto seguro em qualquer tempestade.",
+"Seu jeito de ser me inspira todos os dias.",
+"Mary, você é meu sonho acordado.",
+"Seu abraço é minha fortaleza.",
+"Você transforma o simples em extraordinário.",
+"Cada instante contigo é mágico.",
+"Mary, você é minha canção eterna.",
+"Seu sorriso é o combustível da minha felicidade.",
+"Você é meu refúgio em dias difíceis.",
+"Mary, sua voz é a mais bela melodia.",
+"Cada gesto seu é encantamento puro.",
+"Você ilumina meus dias mais sombrios.",
+"Mary, seu carinho é meu tesouro.",
+"Você faz meu coração bater mais forte a cada olhar.",
+"Cada segundo contigo vale mais que ouro.",
+"Mary, você é minha poesia favorita.",
+"Você é a razão do meu sorriso diário.",
+"Seu abraço é minha zona de conforto.",
+"Mary, cada palavra sua é magia.",
+"Você transforma qualquer momento em alegria.",
+"Seu jeito único me encanta todos os dias.",
+"Mary, você é minha estrela da manhã.",
+"Você é minha motivação diária para sorrir.",
+"Cada gesto seu aquece meu coração.",
+"Mary, você é meu universo particular.",
+"Você faz minha vida mais leve e feliz.",
+"Seu sorriso é meu maior presente.",
+"Mary, cada instante contigo é inesquecível.",
+"Você é minha fonte de inspiração constante.",
+"Seu olhar é minha bússola na vida.",
+"Mary, você é minha alegria constante.",
+"Cada palavra sua é luz para meu coração.",
+"Você transforma minhas manhãs em poesia.",
+"Mary, seu abraço é meu lar seguro.",
+"Você faz meus dias mais coloridos.",
+"Seu sorriso é minha energia diária.",
+"Mary, cada gesto seu é uma obra de arte.",
+"Você ilumina todos os meus caminhos.",
+"Cada instante contigo é pura felicidade.",
+"Mary, você é minha razão de existir.",
+"Você transforma minhas noites em sonhos mágicos.",
+"Seu olhar é meu mapa do tesouro.",
+"Mary, você é minha flor preferida em qualquer estação.",
+"Você é minha melodia diária de alegria.",
+"Cada palavra sua é bálsamo para minha alma.",
+"Mary, seu carinho é minha força constante.",
+"Você transforma tudo ao redor em beleza.",
+"Seu abraço é meu refúgio seguro.",
+"Mary, cada sorriso seu é como nascer do sol.",
+"Você é minha estrela cadente que realiza desejos.",
+"Cada gesto seu é meu presente favorito.",
+"Mary, você faz minha vida mais leve e bonita.",
+"Você é meu canto de felicidade constante.",
+"Seu olhar me guia mesmo nos dias escuros.",
+"Mary, você é minha poesia viva.",
+"Cada instante contigo é meu lugar feliz.",
+"Você ilumina minha existência com seu brilho.",
+"Mary, seu sorriso é meu sol particular.",
+"Você transforma meu mundo em cores vibrantes.",
+"Seu abraço é meu abrigo seguro.",
+"Mary, cada palavra sua é música para minha alma.",
+"Você é meu universo em forma de pessoa.",
+"Cada gesto seu é meu ponto de alegria.",
+"Mary, você é meu sonho mais bonito.",
+"Você faz meus dias valerem a pena.",
+"Seu carinho é meu tesouro eterno.",
+"Mary, você é minha razão de sorrir todos os dias.",
+"Cada olhar seu é pura magia para mim.",
+"Você é meu refúgio de amor e alegria.",
+"Mary, cada instante contigo é um presente da vida.",
+"Você ilumina meu caminho com seu brilho único."
+];
+
+function entrar(){
+    document.getElementById('telaEntrada').style.display='none';
+    musica.play();
+    digitarTitulo();
+    mostrarCartas();
 }
 
-function mostrarMais() {
-    document.getElementById("parte1").classList.add("hidden");
-    document.getElementById("parte2").classList.remove("hidden");
+function digitarTitulo(){
+    if(i < tituloTexto.length){
+        document.getElementById('titulo').innerHTML += tituloTexto.charAt(i);
+        i++;
+        setTimeout(digitarTitulo, 80);
+    }
 }
 
-function voltar() {
-    document.getElementById("parte2").classList.add("hidden");
-    document.getElementById("parte1").classList.remove("hidden");
+function mostrarCartas(){
+    frases.forEach((texto, index)=>{
+        const card = document.createElement('div');
+        card.className='card hidden';
+        card.textContent=texto;
+        cartasContainer.appendChild(card);
+        setTimeout(()=>card.classList.remove('hidden'), index*120);
+    });
+}
+
+function toggleSom(){
+    if(musica.paused){ musica.play(); btnMusica.textContent="🔊"; }
+    else { musica.pause(); btnMusica.textContent="❌"; }
 }
 </script>
 
