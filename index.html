@@ -23,7 +23,6 @@ body{
     color:black;
     width:90%;
     max-width:500px;
-    height:auto;
     border-radius:20px;
     padding:30px;
     margin-top:40px;
@@ -51,12 +50,6 @@ button:hover{
 
 #nao{
     position:absolute;
-}
-
-/* Contador */
-#contador{
-    font-size:24px;
-    font-weight:bold;
 }
 
 /* Tela final */
@@ -107,7 +100,7 @@ button:hover{
 </audio>
 
 <!-- Conteúdo principal -->
-<div id="conteudo" style="display:none;">
+<div id="conteudo">
     <div class="painel">
         <h1>Feliz Dia dos Namorados, Mary ❤️</h1>
 
@@ -118,12 +111,6 @@ button:hover{
         <button onclick="aceitou()">Sim!</button>
         <button id="nao" onmouseover="fuja()">Não!</button>
     </div>
-</div>
-
-<!-- Tela bloqueada -->
-<div id="bloqueio">
-    <h2>💖 Mary, disponível em (Horário Brasil UTC-3):</h2>
-    <div id="contador"></div>
 </div>
 
 <!-- Tela final -->
@@ -141,54 +128,6 @@ button:hover{
 </div>
 
 <script>
-
-/* Horário Brasil UTC-3 */
-function getHorarioBrasil(){
-    const agora = new Date();
-    const utc = agora.getTime() + (agora.getTimezoneOffset() * 60000);
-    return new Date(utc + (-3 * 3600000));
-}
-
-function verificarData(){
-    const agoraBR = getHorarioBrasil();
-    let ano = agoraBR.getFullYear();
-    let dataAlvo = new Date(Date.UTC(ano, 1, 14, 3, 0, 0));
-
-    if(agoraBR > new Date(ano,1,14)){
-        dataAlvo = new Date(Date.UTC(ano+1, 1, 14, 3, 0, 0));
-    }
-
-    if(agoraBR.getDate() === 14 && agoraBR.getMonth() === 1){
-        liberar();
-    }else{
-        iniciarContagem(dataAlvo);
-    }
-}
-
-function iniciarContagem(dataFinal){
-    setInterval(()=>{
-        const agora = new Date().getTime();
-        const distancia = dataFinal - agora;
-
-        if(distancia <= 0){
-            location.reload();
-        }
-
-        const dias = Math.floor(distancia/(1000*60*60*24));
-        const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
-        const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
-        const segundos = Math.floor((distancia%(1000*60))/1000);
-
-        document.getElementById("contador").innerHTML =
-        dias+"d "+horas+"h "+minutos+"m "+segundos+"s";
-    },1000);
-}
-
-function liberar(){
-    document.getElementById("conteudo").style.display="block";
-    document.getElementById("bloqueio").style.display="none";
-    iniciarCoracoes();
-}
 
 function fuja(){
     const botao=document.getElementById("nao");
@@ -218,7 +157,7 @@ function iniciarCoracoes(){
     },300);
 }
 
-verificarData();
+iniciarCoracoes();
 
 </script>
 
