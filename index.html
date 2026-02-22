@@ -1,232 +1,93 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Para Mary ❤️🔥</title>
-<style>
-body {
-    margin: 0;
-    font-family: 'Trebuchet MS', sans-serif;
-    background: url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
-    color: white;
-    overflow-x: hidden;
-}
-#telaEntrada {
-    position: fixed;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.85);
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align:center;
-    z-index:1000;
-}
-#telaEntrada h1 { font-size:2.8em; text-shadow:0 0 20px #ff66c4; }
-#telaEntrada button {
-    margin-top:25px;
-    padding:15px 40px;
-    font-size:1.5em;
-    border:none;
-    border-radius:25px;
-    cursor:pointer;
-    background:linear-gradient(45deg,#ff66c4,#ffd6f7);
-    box-shadow:0 0 20px #ff66c4;
-    font-weight:bold;
-}
-header { padding:80px 20px; text-align:center; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px); }
-h1#titulo { font-size:3em; margin:0; text-shadow:0 0 25px #ff99f7; min-height:60px; }
-.subtext { font-size:1.3em; margin-top:10px; text-shadow:0 0 10px #ffc8ff; }
-.container { max-width:900px; margin:40px auto; padding:20px; }
-.card {
-    background: rgba(0,0,0,0.6);
-    border:2px solid #ff99d9;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 0 15px #ff66c480;
-    backdrop-filter: blur(6px);
-    font-size:1.3em;
-    margin:10px 0;
-    cursor:pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover { transform:translateY(-5px); box-shadow:0 0 25px #ff66c4; }
-.card.hidden { display:none; }
-.btn {
-    padding:10px 25px;
-    font-size:1.2em;
-    border-radius:25px;
-    cursor:pointer;
-    background: linear-gradient(45deg,#ff66c4,#ffd6f7);
-    font-weight:bold;
-    display:inline-block;
-    margin:5px;
-    border:none;
-}
-.footer { text-align:center; padding:25px; margin-top:40px; background: rgba(0,0,0,0.7); color:#ffccf2; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fim de um Sonho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 50px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8;
+        opacity: 0.9;
+    }
+
+    .heart {
+        font-size: 3rem;
+        margin-top: 30px;
+        animation: pulse 2s infinite;
+        color: #ff4d6d;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+        50% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+    }
 </style>
+
 </head>
 <body>
-
-<div id="telaEntrada">
-    <h1>Bem-vinda Mary ❤️✨</h1>
-    <p>Clique no botão para entrar no site</p>
-    <button onclick="entrar()">Entrar 💗</button>
-</div>
-
-<audio id="musica" loop>
-    <source src="https://github.com/Black4445e/free-api-like-freefire/raw/main/200%20euros.mp3" type="audio/mpeg">
-</audio>
-
-<header>
-    <h1 id="titulo"></h1>
-    <div class="subtext">Declaração feita com carinho… 💖🔥</div>
-</header>
-
-<div class="container" id="cartasContainer"></div>
-
-<div style="position:fixed; bottom:20px; right:20px; z-index:1000;">
-    <button class="btn" id="btnMusica" onclick="toggleSom()">🔊</button>
-</div>
-
-<div class="footer">Feito com muito carinho para você, Mary 💗✨</div>
-
-<script>
-const musica = document.getElementById('musica');
-const btnMusica = document.getElementById('btnMusica');
-const cartasContainer = document.getElementById('cartasContainer');
-let tituloTexto = "Mary ❤️ Minha Princesa Gamer 🔥";
-let i = 0;
-
-// 100 frases totalmente únicas
-const frases = [
-"Mary, seu sorriso ilumina mais que qualquer sol.",
-"Você transforma dias comuns em aventuras mágicas.",
-"Seu olhar tem o poder de acalmar minha alma.",
-"Cada gesto seu é poesia pura.",
-"Você é minha melodia favorita em todos os momentos.",
-"Seu abraço é meu lugar seguro.",
-"Seus olhos carregam o brilho das estrelas.",
-"Mary, você é minha inspiração diária.",
-"Com você, até o silêncio é confortável.",
-"Você faz meu coração dançar de felicidade.",
-"Cada palavra sua é como música para meus ouvidos.",
-"Mary, você é minha flor mais rara no jardim da vida.",
-"Seu carinho aquece meu coração.",
-"Você é a luz que ilumina minhas noites.",
-"Cada instante contigo é inesquecível.",
-"Você é meu ponto de paz em meio ao caos.",
-"Mary, sua risada é meu som favorito.",
-"Você transforma cada momento em algo especial.",
-"Seu abraço cura qualquer tristeza.",
-"Você é minha estrela-guia no céu da vida.",
-"Mary, seu sorriso é meu raio de sol.",
-"Cada mensagem sua é um presente para minha alma.",
-"Você faz meu mundo brilhar com cores únicas.",
-"Mary, cada olhar seu é um universo a explorar.",
-"Você é meu porto seguro em qualquer tempestade.",
-"Seu jeito de ser me inspira todos os dias.",
-"Mary, você é meu sonho acordado.",
-"Seu abraço é minha fortaleza.",
-"Você transforma o simples em extraordinário.",
-"Cada instante contigo é mágico.",
-"Mary, você é minha canção eterna.",
-"Seu sorriso é o combustível da minha felicidade.",
-"Você é meu refúgio em dias difíceis.",
-"Mary, sua voz é a mais bela melodia.",
-"Cada gesto seu é encantamento puro.",
-"Você ilumina meus dias mais sombrios.",
-"Mary, seu carinho é meu tesouro.",
-"Você faz meu coração bater mais forte a cada olhar.",
-"Cada segundo contigo vale mais que ouro.",
-"Mary, você é minha poesia favorita.",
-"Você é a razão do meu sorriso diário.",
-"Seu abraço é minha zona de conforto.",
-"Mary, cada palavra sua é magia.",
-"Você transforma qualquer momento em alegria.",
-"Seu jeito único me encanta todos os dias.",
-"Mary, você é minha estrela da manhã.",
-"Você é minha motivação diária para sorrir.",
-"Cada gesto seu aquece meu coração.",
-"Mary, você é meu universo particular.",
-"Você faz minha vida mais leve e feliz.",
-"Seu sorriso é meu maior presente.",
-"Mary, cada instante contigo é inesquecível.",
-"Você é minha fonte de inspiração constante.",
-"Seu olhar é minha bússola na vida.",
-"Mary, você é minha alegria constante.",
-"Cada palavra sua é luz para meu coração.",
-"Você transforma minhas manhãs em poesia.",
-"Mary, seu abraço é meu lar seguro.",
-"Você faz meus dias mais coloridos.",
-"Seu sorriso é minha energia diária.",
-"Mary, cada gesto seu é uma obra de arte.",
-"Você ilumina todos os meus caminhos.",
-"Cada instante contigo é pura felicidade.",
-"Mary, você é minha razão de existir.",
-"Você transforma minhas noites em sonhos mágicos.",
-"Seu olhar é meu mapa do tesouro.",
-"Mary, você é minha flor preferida em qualquer estação.",
-"Você é minha melodia diária de alegria.",
-"Cada palavra sua é bálsamo para minha alma.",
-"Mary, seu carinho é minha força constante.",
-"Você transforma tudo ao redor em beleza.",
-"Seu abraço é meu refúgio seguro.",
-"Mary, cada sorriso seu é como nascer do sol.",
-"Você é minha estrela cadente que realiza desejos.",
-"Cada gesto seu é meu presente favorito.",
-"Mary, você faz minha vida mais leve e bonita.",
-"Você é meu canto de felicidade constante.",
-"Seu olhar me guia mesmo nos dias escuros.",
-"Mary, você é minha poesia viva.",
-"Cada instante contigo é meu lugar feliz.",
-"Você ilumina minha existência com seu brilho.",
-"Mary, seu sorriso é meu sol particular.",
-"Você transforma meu mundo em cores vibrantes.",
-"Seu abraço é meu abrigo seguro.",
-"Mary, cada palavra sua é música para minha alma.",
-"Você é meu universo em forma de pessoa.",
-"Cada gesto seu é meu ponto de alegria.",
-"Mary, você é meu sonho mais bonito.",
-"Você faz meus dias valerem a pena.",
-"Seu carinho é meu tesouro eterno.",
-"Mary, você é minha razão de sorrir todos os dias.",
-"Cada olhar seu é pura magia para mim.",
-"Você é meu refúgio de amor e alegria.",
-"Mary, cada instante contigo é um presente da vida.",
-"Você ilumina meu caminho com seu brilho único."
-];
-
-function entrar(){
-    document.getElementById('telaEntrada').style.display='none';
-    musica.play();
-    digitarTitulo();
-    mostrarCartas();
-}
-
-function digitarTitulo(){
-    if(i < tituloTexto.length){
-        document.getElementById('titulo').innerHTML += tituloTexto.charAt(i);
-        i++;
-        setTimeout(digitarTitulo, 80);
-    }
-}
-
-function mostrarCartas(){
-    frases.forEach((texto, index)=>{
-        const card = document.createElement('div');
-        card.className='card hidden';
-        card.textContent=texto;
-        cartasContainer.appendChild(card);
-        setTimeout(()=>card.classList.remove('hidden'), index*120);
-    });
-}
-
-function toggleSom(){
-    if(musica.paused){ musica.play(); btnMusica.textContent="🔊"; }
-    else { musica.pause(); btnMusica.textContent="❌"; }
-}
-</script>
-
+    <div class="container">
+        <h1>Fim de uma Tentativa</h1>
+        <p>
+            O dono deste site desistiu de tentar algo que nunca vai acontecer.
+            <br><br>
+            Depois de insistir, sonhar e acreditar,
+            hoje ele já não acredita mais no amor.
+        </p>
+        <div class="heart">❤</div>
+    </div>
 </body>
 </html>
