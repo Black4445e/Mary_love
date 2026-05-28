@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Para Mary ❤️🔥</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -16,15 +15,14 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:'Trebuchet MS', sans-serif;
-    background:url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
-    color:white;
-    overflow-x:hidden;
-    position:relative;
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: url('https://wallpapercave.com/wp/wp6606221.jpg') center/cover no-repeat fixed;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Overlay animado */
 body::before{
     content:'';
     position:fixed;
@@ -47,24 +45,23 @@ body::before{
     100%{ filter:hue-rotate(360deg); }
 }
 
-/* Tela entrada */
-#telaEntrada{
-    position:fixed;
+#telaEntrada {
+    position: fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.9);
     display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align:center;
     z-index:1000;
     padding:20px;
 }
 
-#telaEntrada h1{
+#telaEntrada h1 {
     font-size:2.8em;
     text-shadow:
         0 0 10px #ff66c4,
@@ -77,15 +74,15 @@ body::before{
     font-size:1.2em;
 }
 
-#telaEntrada button{
-    margin-top:25px;
+#telaEntrada button {
+    margin-top:30px;
     padding:15px 40px;
-    font-size:1.2em;
+    font-size:1.3em;
     border:none;
     border-radius:25px;
     cursor:pointer;
     background:linear-gradient(45deg,#ff66c4,#ffd6f7);
-    box-shadow:0 0 25px #ff66c4;
+    box-shadow:0 0 20px #ff66c4;
     font-weight:bold;
     transition:0.3s;
 }
@@ -94,19 +91,18 @@ body::before{
     transform:scale(1.08);
 }
 
-/* Header */
-header{
+header {
     padding:80px 20px;
     text-align:center;
-    background:rgba(0,0,0,0.45);
-    backdrop-filter:blur(4px);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
 }
 
-h1#titulo{
+h1#titulo {
     font-size:3.5em;
     min-height:80px;
     font-family:'Press Start 2P', cursive;
-
+    line-height:1.4;
     text-shadow:
         0 0 10px #ff66c4,
         0 0 20px #ff66c4,
@@ -114,44 +110,38 @@ h1#titulo{
         0 0 80px #ff66c4;
 }
 
-.subtext{
-    margin-top:20px;
+.subtext {
     font-size:1.3em;
+    margin-top:20px;
     text-shadow:0 0 10px #ffc8ff;
 }
 
 #contador{
-    margin-top:25px;
+    margin-top:20px;
     font-size:1.2em;
     color:#ffd6f7;
+    text-shadow:0 0 10px #ff66c4;
 }
 
-/* Container */
-.container{
-    max-width:950px;
+.container {
+    max-width:900px;
     margin:40px auto;
     padding:20px;
 }
 
-/* Cartas */
-.card{
-    background:rgba(0,0,0,0.6);
+.card {
+    background: rgba(0,0,0,0.6);
     border:2px solid #ff99d9;
     padding:20px;
-    border-radius:15px;
+    border-radius:14px;
     box-shadow:0 0 15px #ff66c480;
-    backdrop-filter:blur(6px);
+    backdrop-filter: blur(6px);
     font-size:1.2em;
     margin:15px 0;
     cursor:pointer;
-
+    transition:all 0.6s ease;
     opacity:0;
     transform:translateY(30px);
-
-    transition:
-        transform 0.5s,
-        box-shadow 0.5s,
-        opacity 0.6s;
 }
 
 .card.show{
@@ -159,55 +149,56 @@ h1#titulo{
     transform:translateY(0);
 }
 
-.card:hover{
-    transform:translateY(-5px) scale(1.02);
-    box-shadow:0 0 30px #ff66c4;
+.card:hover {
+    transform:translateY(-5px) scale(1.01);
+    box-shadow:0 0 25px #ff66c4;
 }
 
-.card .conteudo{
+.card .mensagem{
     display:none;
     margin-top:15px;
-    color:#ffe6f7;
+    color:#ffe8f7;
 }
 
-.card.aberta .conteudo{
+.card.aberta .mensagem{
     display:block;
 }
 
-/* Botão música */
-.btn{
-    padding:12px 25px;
-    font-size:1.1em;
-    border-radius:25px;
-    cursor:pointer;
-    background:linear-gradient(45deg,#ff66c4,#ffd6f7);
-    font-weight:bold;
-    border:none;
-    box-shadow:0 0 15px #ff66c4;
+.card.aberta{
+    background:rgba(255,105,180,0.12);
 }
 
-/* Footer */
-.footer{
+.btn {
+    padding:10px 25px;
+    font-size:1.2em;
+    border-radius:25px;
+    cursor:pointer;
+    background: linear-gradient(45deg,#ff66c4,#ffd6f7);
+    font-weight:bold;
+    border:none;
+    box-shadow:0 0 10px #ff66c4;
+}
+
+.footer {
     text-align:center;
-    padding:30px;
+    padding:25px;
     margin-top:40px;
-    background:rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.7);
     color:#ffccf2;
     font-size:1.1em;
 }
 
-/* Corações */
 .coracao{
     position:fixed;
     color:#ff66c4;
     animation:subir 6s linear infinite;
-    opacity:0.8;
-    z-index:999;
+    font-size:20px;
+    opacity:0.7;
     pointer-events:none;
+    z-index:999;
 }
 
 @keyframes subir{
-
     0%{
         transform:translateY(100vh) scale(0.5);
         opacity:0;
@@ -218,18 +209,32 @@ h1#titulo{
     }
 
     100%{
-        transform:translateY(-120vh) scale(1.5);
+        transform:translateY(-120vh) scale(1.2);
         opacity:0;
     }
-
 }
 
-/* Mobile */
+.achievement{
+    position:fixed;
+    top:20px;
+    right:-400px;
+    background:rgba(0,0,0,0.85);
+    border:2px solid #ff66c4;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 0 20px #ff66c4;
+    transition:0.6s;
+    z-index:2000;
+}
+
+.achievement.show{
+    right:20px;
+}
+
 @media(max-width:700px){
 
     h1#titulo{
         font-size:1.8em;
-        line-height:1.5;
     }
 
     .card{
@@ -241,35 +246,31 @@ h1#titulo{
     }
 
     .subtext{
-        font-size:1em;
+        font-size:1.05em;
     }
 
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- Tela inicial -->
-<div id="telaEntrada">
-
-    <h1>Bem-vinda Mary ❤️✨</h1>
-
-    <p>Clique para entrar no nosso universo 💖</p>
-
-    <button onclick="entrar()">Entrar 💗</button>
-
+<div class="achievement" id="achievement">
+    🎮 Achievement desbloqueado:<br>
+    <strong>Entrou no coração da Mary ❤️</strong>
 </div>
 
-<!-- Música -->
+<div id="telaEntrada">
+    <h1>Bem-vinda Mary ❤️✨</h1>
+    <p>Clique no botão para entrar no site</p>
+    <button onclick="entrar()">Entrar 💗</button>
+</div>
+
 <audio id="musica" loop>
     <source src="https://github.com/Black4445e/free-api-like-freefire/raw/main/200%20euros.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Header -->
 <header>
-
     <h1 id="titulo"></h1>
 
     <div class="subtext">
@@ -277,26 +278,16 @@ h1#titulo{
     </div>
 
     <div id="contador"></div>
-
 </header>
 
-<!-- Cartas -->
 <div class="container" id="cartasContainer"></div>
 
-<!-- Botão música -->
 <div style="position:fixed; bottom:20px; right:20px; z-index:1000;">
-
-    <button class="btn" id="btnMusica" onclick="toggleSom()">
-        🔊
-    </button>
-
+    <button class="btn" id="btnMusica" onclick="toggleSom()">🔊</button>
 </div>
 
-<!-- Footer -->
 <div class="footer">
-
     Feito com muito carinho para você, Mary 💗✨
-
 </div>
 
 <script>
@@ -304,29 +295,12 @@ h1#titulo{
 const musica = document.getElementById('musica');
 const btnMusica = document.getElementById('btnMusica');
 const cartasContainer = document.getElementById('cartasContainer');
+const achievement = document.getElementById('achievement');
 
 let tituloTexto = "Mary ❤️ Minha Princesa Gamer 🔥";
 let i = 0;
 
-/* Contador */
-const inicio = new Date("2024-11-20");
-
-setInterval(()=>{
-
-    const agora = new Date();
-
-    const diff = agora - inicio;
-
-    const dias = Math.floor(diff / (1000*60*60*24));
-
-    document.getElementById('contador').innerHTML =
-        `Te admirando há ${dias} dias ❤️`;
-
-},1000);
-
-/* Frases */
 const frases = [
-
 "Mary, seu sorriso ilumina mais que qualquer sol.",
 "Você transforma dias comuns em aventuras mágicas.",
 "Seu olhar tem o poder de acalmar minha alma.",
@@ -337,22 +311,15 @@ const frases = [
 "Mary, você é minha inspiração diária.",
 "Com você, até o silêncio é confortável.",
 "Você faz meu coração dançar de felicidade.",
-
 "Mary, você é meu sonho mais bonito.",
-"Seu carinho é meu tesouro eterno.",
-"Você ilumina meu caminho com seu brilho único.",
-"Cada olhar seu é pura magia para mim.",
-"Você é meu refúgio de amor e alegria.",
-
+"Você ilumina meu caminho com seu brilho único."
 ];
 
-/* Entrar */
 function entrar(){
 
     document.getElementById('telaEntrada').style.display='none';
 
     musica.volume = 0;
-
     musica.play();
 
     let vol = 0;
@@ -360,26 +327,31 @@ function entrar(){
     const fade = setInterval(()=>{
 
         if(vol < 1){
-
             vol += 0.05;
-
             musica.volume = vol;
-
-        }else{
-
+        }
+        else{
             clearInterval(fade);
-
         }
 
     },200);
 
     digitarTitulo();
-
     mostrarCartas();
-
+    iniciarCoracoes();
+    iniciarContador();
+    mostrarAchievement();
 }
 
-/* Digitar título */
+function mostrarAchievement(){
+
+    achievement.classList.add('show');
+
+    setTimeout(()=>{
+        achievement.classList.remove('show');
+    },5000);
+}
+
 function digitarTitulo(){
 
     if(i < tituloTexto.length){
@@ -388,116 +360,104 @@ function digitarTitulo(){
 
         i++;
 
-        setTimeout(digitarTitulo,80);
-
+        setTimeout(digitarTitulo, 80);
     }
-
 }
 
-/* Mostrar cartas */
 function mostrarCartas(){
 
-    frases.forEach((texto,index)=>{
+    frases.forEach((texto, index)=>{
 
         const card = document.createElement('div');
 
         card.className='card';
 
-        card.innerHTML = `
-
-            <h3>💌 Carta ${index+1}</h3>
-
-            <div class="conteudo">
-                ${texto}
-            </div>
-
+        card.innerHTML=`
+            <strong>💌 Carta ${index+1}</strong>
+            <div class="mensagem">${texto}</div>
         `;
 
         card.onclick = ()=>{
-
             card.classList.toggle('aberta');
-
         };
 
         cartasContainer.appendChild(card);
 
         setTimeout(()=>{
-
             card.classList.add('show');
-
-        },index*200);
-
+        }, index*180);
     });
 
-    /* Carta final */
     setTimeout(()=>{
 
         const final = document.createElement('div');
 
-        final.className='card show aberta';
+        final.className='card show';
 
         final.innerHTML=`
-
-            <h2>❤️ Mensagem Final ❤️</h2>
-
-            <div class="conteudo" style="display:block; margin-top:15px;">
-
+            <h2>❤️ Eu gosto muito de você ❤️</h2>
+            <br>
+            <p>
                 Obrigado por existir na minha vida ✨<br><br>
-
-                Você deixa meus dias mais felizes,<br>
-                mais leves e muito mais especiais 💖
-
-            </div>
-
+                Você deixa tudo mais bonito, mais leve e mais feliz.
+            </p>
         `;
 
         cartasContainer.appendChild(final);
 
-    }, frases.length * 200 + 1000);
-
+    }, frases.length * 200 + 1200);
 }
 
-/* Música */
 function toggleSom(){
 
     if(musica.paused){
-
         musica.play();
-
         btnMusica.textContent="🔊";
-
-    }else{
-
-        musica.pause();
-
-        btnMusica.textContent="❌";
-
     }
-
+    else{
+        musica.pause();
+        btnMusica.textContent="❌";
+    }
 }
 
-/* Corações */
-setInterval(()=>{
+function iniciarCoracoes(){
 
-    const heart = document.createElement('div');
+    setInterval(()=>{
 
-    heart.className='coracao';
+        const heart = document.createElement('div');
 
-    heart.innerHTML='💖';
+        heart.className='coracao';
 
-    heart.style.left=Math.random()*100+'vw';
+        heart.innerHTML='💖';
 
-    heart.style.fontSize=(15+Math.random()*30)+'px';
+        heart.style.left=Math.random()*100+'vw';
 
-    document.body.appendChild(heart);
+        heart.style.fontSize=(15+Math.random()*30)+'px';
 
-    setTimeout(()=>{
+        document.body.appendChild(heart);
 
-        heart.remove();
+        setTimeout(()=>heart.remove(),6000);
 
-    },6000);
+    },300);
+}
 
-},300);
+function iniciarContador(){
+
+    const inicio = new Date("2025-01-01");
+
+    setInterval(()=>{
+
+        const agora = new Date();
+
+        const diff = agora - inicio;
+
+        const dias = Math.floor(diff / (1000*60*60*24));
+
+        document.getElementById('contador').innerHTML =
+            `Te admirando há ${dias} dias ❤️`;
+
+    },1000);
+}
 
 </script>
 
